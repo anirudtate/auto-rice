@@ -11,25 +11,24 @@ sudo pacman -S --noconfirm xorg-server sx xorg-xkill xorg-xsetroot xorg-xprop \
      pamixer zsh-autosuggesions zsh-completions zsh-history-substring-search \
      zsh-syntax-highlighting xdg-user-dirs
 
-#part3
-printf '\033c'
 cd $HOME
-git clone --separate-git-dir=$HOME/.dotfiles git@gihhub.com:anirudtate/dotfiles.git tmpdotfiles
+git clone --separate-git-dir=$HOME/.dotfiles https://github.com/anirudtate/dotfiles.git tmpdotfiles
 rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 rm -r tmpdotfiles
+
 # dwm: Window Manager
-git clone --depth=1 git@github.com:anirudtate/dwm.git ~/.local/src/dwm
+git clone --depth=1 https://github.com/anirudtate/dwm.git ~/.local/src/dwm
 sudo make -C ~/.local/src/dwm install
 
 # st: Terminal
-git clone --depth=1 git@github.com:anirudtate/st.git ~/.local/src/st
+git clone --depth=1 https://github.com/anirudtate/st.git ~/.local/src/st
 sudo make -C ~/.local/src/st install
 
 # dmenu: Program Menu
-git clone --depth=1 git@github.com:anirudtate/dmenu.git ~/.local/src/dmenu
+git clone --depth=1 https://github.com/anirudtate/dmenu.git ~/.local/src/dmenu
 sudo make -C ~/.local/src/dmenu install
 
-# pikaur: AUR helper
+# yay: AUR helper
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -fsri
