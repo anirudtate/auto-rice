@@ -8,7 +8,7 @@ sudo pacman -S --noconfirm xorg-server sx xorg-xkill xorg-xsetroot xorg-xprop \
      dosfstools ntfs-3g git sxhkd zsh pipewire pipewire-pulse \
      rsync dash \
      xcompmgr thunar gvfs gvfs-mtp nnn \
-     pamixer zsh-autosuggesions zsh-completions zsh-history-substring-search \
+     pamixer zsh-autosuggestions zsh-completions zsh-history-substring-search \
      zsh-syntax-highlighting xdg-user-dirs
 
 cd $HOME
@@ -33,7 +33,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -fsri
 cd
-yay -S dashbinsh
+yay -S --noconfirm dashbinsh google-chrome
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dot config --local status.showUntrackedFiles no
